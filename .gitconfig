@@ -1,0 +1,13 @@
+[user]
+	name = Marcus Schiesser
+	email = mail@marcusschiesser.de
+[push]
+	default = simple
+[pack]
+	windowMemory = 512m
+[core]
+	autocrlf = input
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
