@@ -1,0 +1,57 @@
+{
+  "files.autoSave": "afterDelay",
+  "window.zoomLevel": 2,
+  "workbench.colorTheme": "Default Light+",
+  "python.jediEnabled": false,
+  "cSpell.userWords": ["datasource", "numpy", "yfinance"],
+  "jupyter.askForKernelRestart": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.languageServer": "Default",
+  "git.autofetch": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "partialDiff.preComparisonTextNormalizationRules": [
+    {
+      "name": "Replace tabs with whitespaces",
+      "match": "\t",
+      "replaceWith": "  "
+    },
+    {
+      "name": "Replace multiple whitespaces with one whitespace",
+      "match": " {2,}",
+      "replaceWith": " "
+    }
+  ],
+  "editor.formatOnSave": true,
+  "editor.largeFileOptimizations": false,
+  "[dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "python.formatting.autopep8Args": ["--ignore", "E402"],
+  "go.toolsManagement.autoUpdate": true,
+  "docker.explorerRefreshInterval": 4000,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "editor.wordWrap": "on",
+  "dotfiles.repository": "marcusschiesser/dotfiles"
+}
