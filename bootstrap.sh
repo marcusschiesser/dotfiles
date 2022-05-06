@@ -16,3 +16,6 @@ if [[ $dotfiles ]]; then
 else
   echo "You don't have anything in '$DOTFILEDIR'"
 fi
+
+# Nushell MacOS hack, see
+ln -s $DOTFILEDIR/.config/nushell "$HOME/Library/Application Support"
