@@ -15,7 +15,7 @@ def create_right_prompt [] {
 }
 
 # Use nushell functions to define your right and left prompt
-let-env PROMPT_COMMAND = { oh-my-posh prompt print primary --config ~/.config/nushell/poshtheme.omp.json | str collect }
+let-env PROMPT_COMMAND = { oh-my-posh prompt print primary --config ~/.config/poshtheme.omp.json | str collect }
 let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
 
 # The prompt indicators are environmental variables that represent

@@ -8,10 +8,8 @@
           "background": "#9A348E",
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b6",
-          "properties": {
-            "template": "{{ .UserName }} "
-          },
           "style": "diamond",
+          "template": "{{ .UserName }} ",
           "type": "session"
         },
         {
@@ -19,10 +17,10 @@
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
           "properties": {
-            "style": "folder",
-            "template": " {{ .Path }} "
+            "style": "folder"
           },
           "style": "powerline",
+          "template": " {{ .Path }} ",
           "type": "path"
         },
         {
@@ -33,32 +31,32 @@
             "branch_icon": "",
             "fetch_stash_count": true,
             "fetch_status": false,
-            "fetch_upstream_icon": true,
-            "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}) "
+            "fetch_upstream_icon": true
           },
           "style": "powerline",
+          "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}) ",
           "type": "git"
         },
         {
-          "type": "executiontime",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "#ffffff",
           "background": "#8800dd",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
           "properties": {
-            "threshold": 500,
             "style": "austin",
-            "template": " <#fefefe>\ufbab</> "
-          }
+            "threshold": 500
+          },
+          "style": "powerline",
+          "template": " <#fefefe>\ufbab</> ",
+          "type": "executiontime"
         },
         {
           "background": "#33658A",
           "foreground": "#ffffff",
           "properties": {
-            "template": " \u2665 {{ .CurrentDate | date .Format }} ",
             "time_format": "15:04"
           },
           "style": "diamond",
+          "template": " \u2665 {{ .CurrentDate | date .Format }} ",
           "trailing_diamond": "\ue0b0",
           "type": "time"
         }
@@ -67,5 +65,5 @@
     }
   ],
   "final_space": true,
-  "version": 1
+  "version": 2
 }
