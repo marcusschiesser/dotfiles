@@ -38,6 +38,24 @@
           "type": "git"
         },
         {
+          "type": "text",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#d53c14",
+          "template": "{{ .Env.AWS_ACCOUNT_ID }} ({{ .Env.SCOPE }}:{{ .Env.ENVIRONMENT }})"
+        },
+        {
+          "type": "kubectl",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#ebcc34",
+          "template": " \uFD31 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
           "background": "#8800dd",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
@@ -45,9 +63,7 @@
             "style": "austin",
             "threshold": 500
           },
-          "style": "powerline",
-          "template": " <#fefefe>\ufbab</> ",
-          "type": "executiontime"
+          "template": " <#fefefe>\ufbab</> "
         },
         {
           "background": "#33658A",
