@@ -24,6 +24,10 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Ensure that fish is installed under Linux
   apt-get update && export DEBIAN_FRONTEND=noninteractive \
       && apt-get -y install --no-install-recommends fish
+  # and oh-my-posh
+  if ! [ -x "$(command -v oh-my-posh)" ]; then
+    sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh && sudo chmod +x /usr/local/bin/oh-my-posh
+  fi
 fi
 
 
