@@ -18,8 +18,7 @@ else
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
-  # Nushell MacOS hack
-  ln -s $DOTFILEDIR/.config/nushell "$HOME/Library/Application Support"
+  brew install fish vim oh-my-posh node
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Ensure that fish and vim are installed under Linux
   echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
