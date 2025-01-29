@@ -1,2 +1,4 @@
 .config/simple-update-notifier/githubnext__github-copilot-cli.json
+.config/fabric
+.config/op
 bin

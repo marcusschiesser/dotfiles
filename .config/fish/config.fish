@@ -2,8 +2,9 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "/opt/homebrew/bin" $fish_user_paths
 set -g fish_user_paths "$CHECKOUT/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/bin" $fish_user_paths
-set -g fish_user_paths "/opt/homebrew/opt/node@18/bin" $fish_user_paths
-set -x DOCKER_HOST "unix://$HOME/.orbstack/run/docker.sock"
+set -g fish_user_paths "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin" $fish_user_paths
+# set -x DOCKER_HOST "unix://$HOME/.orbstack/run/docker.sock"
+set -x DOCKER_HOST "unix://$HOME/.docker/run/docker.sock"
 oh-my-posh init fish --config ~/.config/poshtheme.omp.json | source
 
 # pnpm
@@ -14,5 +15,17 @@ end
 # pnpm end
 
 alias ls='ls -exa'
-alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 alias gg='github-copilot-cli what-the-shell'
+
+# Created by `pipx` on 2024-01-18 06:39:02
+set PATH $PATH /Users/marcus/.local/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+source $__fish_config_dir/secrets.fish
+
+function dotenv
+    set -gx (cat $argv | string split = | string trim)
+end
