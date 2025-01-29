@@ -2,3 +2,4 @@
 .config/fabric
 .config/op
 bin
+.env

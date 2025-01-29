@@ -24,8 +24,40 @@ set PATH $PATH /Users/marcus/.local/bin
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-source $__fish_config_dir/secrets.fish
-
 function dotenv
-    set -gx (cat $argv | string split = | string trim)
+    # Check if file exists and is provided
+    if test (count $argv) -eq 0
+        echo "Usage: dotenv <path-to-env-file>"
+        return 1
+    end
+    
+    if not test -f "$argv[1]"
+        echo "File not found: $argv[1]"
+        return 1
+    end
+
+    while read -l line
+        # Skip empty lines and comments
+        if string match -rq '^\s*$|^\s*#' -- $line
+            continue
+        end
+        
+        # Extract key and value
+        set -l key (string match -r '^\s*([^=]+?)\s*=' $line)[2]
+        set -l value (string match -r '^\s*[^=]+?\s*=\s*(.+?)\s*$' $line)[2]
+        
+        # Remove quotes if present
+        if string match -rq '^".*"$|^'"'"'.*'"'"'$' -- $value
+            set value (string sub -s 2 -e -1 -- $value)
+        end
+        
+        if test -n "$key" -a -n "$value"
+            set -gx $key $value
+        end
+    end < $argv[1]
+end
+
+# Load environment variables from ~/.env
+if test -f "$HOME/.env"
+    dotenv "$HOME/.env"
 end
